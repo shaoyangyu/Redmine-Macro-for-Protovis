@@ -1,5 +1,5 @@
 require 'redmine'
-
+require 'protovis'
 Redmine::Plugin.register :redmine_protovis do
   name 'Redmine Protovis plugin'
   author 'Author name'
