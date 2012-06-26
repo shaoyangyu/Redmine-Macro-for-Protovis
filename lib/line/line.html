@@ -28,20 +28,18 @@ body {
 <script src="/javascripts/d3.v2.js"></script>
 <script>
 
-var data = d3.range(40).map(function(i) {
-  return {x: i / 39, y: (Math.sin(i / 3) + 2) / 4};
-});
+var data =JSON.parse('<%=data%>');
 
-var margin = {top: 0, right: 10, bottom: 20, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var margin = {top: 10, right: 10, bottom: 20, left: 40},
+    width = <%=width%> - margin.left - margin.right,
+    height =<%=height%> - margin.top - margin.bottom;
 
 var x = d3.scale.linear()
-    .domain([0, 1])
-    .range([0, width]);
+        .domain([0, d3.max(data, function(d) { return d.x; })])
+        .range([0, width]);
 
 var y = d3.scale.linear()
-    .domain([0, 1])
+    .domain([0, d3.max(data, function(d) { return d.y; })])
     .range([height, 0]);
 
 var xAxis = d3.svg.axis()
