@@ -1,4 +1,4 @@
-= protovis
+= protovis macro for RedMine
 
 It is Redmine Macro for Protovis. 
 1. macro format:{{protovis(%name,%width,%height,%data)}}
@@ -17,8 +17,7 @@ Use the Macro on redmine wiki
                          ]
            )}}
 -------------------------------------------------
-{{protovis(sample_pie,400,300,[0.1,0.2,0.2]
-           )}}
+{{protovis(sample_pie,400,300,[0.1,0.2,0.2])}}
 
 
 Note: the macro will fetch the template from lib folder if the name with "sample_" prefix, but not from db.
@@ -35,5 +34,43 @@ Setup steps:
 1.download the sourcecode
 2.copy the folder to your redmine plugins fold /redmine/plugins/vender/
 3.restart your redmine app.
+
+
+Sample list :
+
+Line:
+-------------------------------------------------
+{{protovis(sample_line,400,300,[
+                           <x:0,y:0.5>,
+                           <x:3,y:3>
+                         ]
+           )}}
+Pie:
+-------------------------------------------------
+{{protovis(sample_pie,
+           400,
+           300,
+           [0.1,0.2,0.2]
+           )
+}}
+
+Dot:
+-------------------------------------------------
+{{protovis(sample_dot,400,300,[
+                           <x:0,y:0.5>,
+                           <x:3,y:3>,
+                           <x:2,y:1> 
+                        ]
+           )}}
+Bar:           
+-------------------------------------------------
+{{protovis(sample_bar,400,300,[
+                           <"name":"HK","value":0.5>,
+                           <"name":"BJ","value":3>,
+                           <"name":"NY","value":1> 
+                        ]
+           )}}
+-------------------------------------------------
+ 
 
  
