@@ -24,12 +24,12 @@ body {
 }
 
 </style>
-<div id="svg"></div>
+<div id="line<%=id%>"></div>
 <script src="/javascripts/d3.v2.js"></script>
 <script>
 
 var data =JSON.parse('<%=data%>');
-
+  
 var margin = {top: 10, right: 10, bottom: 20, left: 40},
     width = <%=width%> - margin.left - margin.right,
     height =<%=height%> - margin.top - margin.bottom;
@@ -54,7 +54,7 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.x); })
     .y(function(d) { return y(d.y); });
 
-var svg = d3.select("#svg").append("svg")
+var svg = d3.select("#line<%=id%>").append("svg")
     .datum(data)
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)

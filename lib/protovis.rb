@@ -1,5 +1,5 @@
 require 'erb'
- 
+require 'digest/sha2' 
  
 module Protovis
   Redmine::WikiFormatting::Macros.register do
@@ -17,8 +17,11 @@ module Protovis
   	data[:data]=data[:data].gsub("&lt;","{")
     data[:data]=data[:data].gsub("&gt;","}")
     data[:data]=data[:data].gsub("<br />","")
+    p data[:data]
     data[:data]=ActiveSupport::JSON.decode(data[:data])
     data[:data]=ActiveSupport::JSON.encode(data[:data])
+    data[:id]=Digest::SHA256::hexdigest(data[:data])
+    puts "log-->JSON String is :"+data[:data]
   	class<<data
   		def method_missing(method,*args,&block)
 	 	  self[method]
