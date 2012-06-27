@@ -1,5 +1,10 @@
+a="[<a:b>]"
+class<<a
+        def wash
+          gsub("<br />","").gsub(" ","").gsub("&lt;","{").gsub("&gt;","}").gsub("<","{").gsub(">","}")
+        end
+end
 
-a=""
-b=""
-p a.hash 
-p b.hash 
+p a=a.wash
+
+p a 

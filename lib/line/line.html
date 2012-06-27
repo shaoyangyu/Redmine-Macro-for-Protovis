@@ -28,7 +28,9 @@ body {
 <script src="/javascripts/d3.v2.js"></script>
 <script>
 
-var data =JSON.parse('<%=data%>');
+//var data =JSON.parse('<%=data%>');
+var data = <%=data%>;
+// var data = [0.1,0.2,0.2];
   
 var margin = {top: 10, right: 10, bottom: 20, left: 40},
     width = <%=width%> - margin.left - margin.right,

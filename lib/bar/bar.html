@@ -60,8 +60,8 @@ var svg = d3.select("#bar<%=id%>").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  var data=JSON.parse('<%=data%>');
-
+  // var data=JSON.parse('<%=data%>');
+  var data=<%=data%>;
   // Parse numbers, and sort by value.
   data.forEach(function(d) { d.value = +d.value; });
   data.sort(function(a, b) { return b.value - a.value; });

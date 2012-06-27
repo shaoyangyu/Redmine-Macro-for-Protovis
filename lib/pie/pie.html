@@ -6,7 +6,7 @@ var width = <%=width%>,
     height = <%=height%>,
     outerRadius = Math.min(width, height) / 2,
     innerRadius = outerRadius * .6,
-    data =JSON.parse('<%=data%>'),
+    data = <%=data%>,
     color = d3.scale.category20(),
     donut = d3.layout.pie(),
     arc = d3.svg.arc().innerRadius(innerRadius).outerRadius(outerRadius);

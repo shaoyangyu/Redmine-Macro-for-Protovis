@@ -1,0 +1,82 @@
+<!--
+   Author shaoyang
+   email:yushaoyang@WindRoader.com
+   @createddate 2012-06-27 21:44:59 +0800
+-->
+ <script type="text/x-jquery-tmpl"  class="TemplateActionView">
+    
+    <div class="item {{if done}}done{{/if}}">
+      <div class="view" title="Double click to edit...">
+        <span>${name}</span> <a class="destroy"></a>
+      </div>
+      
+      <div class="edit">
+        name:<input type="text" value="${name}">
+        content:<br/><textarea>${content}</textarea><br/>
+        <input type="button" value="save" class="savebutton">
+      </div>
+    </div>
+ </script>
+
+
+<script   class="TemplateActionScript">
+(function() {
+/*
+TemplateClientAction.class_eval do
+begin
+*/
+TemplateActionScript={
+
+//instance methods/variable ref
+ 
+
+events : {
+      "click    .destroy": "remove",
+      "dblclick .view": "edit",
+      "keypress input[type=text]": "blurOnEnter",
+      "click    .savebutton": "close",
+
+    },
+
+elements :{
+      "input[type=text]": "name",
+      ".savebutton": "savebutton",
+      "textarea": "content",
+    }, 
+
+ initialize:function(){
+        /*
+          do the things which need be handled the instance initiated. for examplt ,bind event
+        */
+   },
+
+remove :function() {
+      return this.item.destroy();
+    },
+
+
+close : function() {
+      this.el.removeClass("editing");
+      return this.item.updateAttributes({
+        name: this.name.val(),
+        content:this.content.val(),
+      });
+    },
+
+
+edit  : function() {
+      this.el.addClass("editing");
+      return this.name.focus();
+    },
+
+blurOnEnter : function(e) {
+      if (e.keyCode === 13) {
+        return this.savebutton.click();
+      }
+    },
+}
+}).call(this);
+/*
+end
+*/
+</script> 

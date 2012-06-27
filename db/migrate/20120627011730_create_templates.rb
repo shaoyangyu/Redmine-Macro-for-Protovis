@@ -3,7 +3,7 @@ class CreateTemplates < ActiveRecord::Migration
     create_table :templates do |t|
       t.column :tid, :integer
       t.column :name, :string
-      t.column :content, :string
+      t.column :content, :text
     end
   end
 

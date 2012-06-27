@@ -1,0 +1,23 @@
+ <%
+  baseurl = Redmine::Utils.relative_url_root
+  %>
+
+ 
+  <%=stylesheet_link_tag(baseurl + "/plugin_assets/redmine_protovis/stylesheets/application.css")
+  %>  
+  <%=javascript_include_tag(baseurl + "/plugin_assets/redmine_protovis/javascripts/jquery-1.7.1.js") 
+  %>
+  <%=javascript_include_tag(baseurl + "/plugin_assets/redmine_protovis/javascripts/spine.js") 
+  %>
+  
+  <%=javascript_include_tag(baseurl + "/plugin_assets/redmine_protovis/javascripts/jquery.tmpl.js") 
+  %>
+  <%=javascript_include_tag(baseurl + "/plugin_assets/redmine_protovis/javascripts/local.js") 
+  %>
+  <%=javascript_include_tag(baseurl + "/plugin_assets/redmine_protovis/javascripts/ajax.js") 
+  %>
+  <%=render("template.Action.html")%>
+  <%=render("template.ListAction.html")%> 
+    
+  <%=javascript_include_tag(baseurl + "/plugin_assets/redmine_protovis/javascripts/TemplateClient.js") 
+  %>
