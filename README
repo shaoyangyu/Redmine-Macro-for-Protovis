@@ -28,4 +28,10 @@ Also you can update your protovis template via plugin. http://your_redminehost/p
 3.create protovis template:
 Context={width,height,data,id} will be passed to render your protovis templates.
 
+
+Setup steps:
+1.download the sourcecode
+2.copy the folder to your redmine plugins fold /redmine/plugins/vender/
+3.restart your redmine app.
+
  
