@@ -1,0 +1,27 @@
+It is Redmine Macro for Protovis. 
+
+Example: 
+
+Use the Macro on redmine wiki
+    
+-------------------------------------------------
+{{protovis(sample_line,400,300,[
+                           <x:0,y:0.5>,
+                           <x:3,y:3>
+                         ]
+           )}}
+-------------------------------------------------
+{{protovis(sample_pie,400,300,[0.1,0.2,0.2]
+           )}}
+
+
+Note: the macro will fetch the template from lib folder if the name with "sample_" prefix, but not from db.
+     
+
+
+Also you can update your protovis template via plugin. http://your_redminehost/protovis.
+
+
+Context={width,height,data,id} will be passed to render your protovis templates.
+
+ 
