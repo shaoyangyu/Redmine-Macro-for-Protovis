@@ -1,6 +1,10 @@
 It is Redmine Macro for Protovis. 
+1. macro format:{{protovis(%name,%width,%height,%data)}}
+            ---%data will follow JSON-like format. replace "{}" with "<>"
+            ---%name is the name of protovis template which are in /lib folder or in DB for you create with plugin
 
-Example: 
+
+2. Example: 
 
 Use the Macro on redmine wiki
     
@@ -21,7 +25,7 @@ Note: the macro will fetch the template from lib folder if the name with "sample
 
 Also you can update your protovis template via plugin. http://your_redminehost/protovis.
 
-
+3.create protovis template:
 Context={width,height,data,id} will be passed to render your protovis templates.
 
  
